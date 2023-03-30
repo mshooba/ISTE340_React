@@ -1,0 +1,79 @@
+.App{
+  font-family: "Poppins", sans-serif;
+  color: #212121;
+  background-color: #9f9f9f;
+
+}
+body {
+  margin: 0 auto;
+}
+
+/*nav styles have to use !important??? not good*/
+
+nav.navbar {
+  padding: 10px 50px;
+}
+
+.nav-link:hover {
+  color:  #F36917 !important;
+  
+}
+
+/* main title styles */
+
+.title {
+  background-color: rgb(234, 234, 234);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.title h1, h2 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+/* card text styles*/
+
+.card-body {
+ margin: 2rem;
+}
+
+.card-title.h5 {
+  text-align: center;
+  padding-bottom: 1rem;
+  font-weight: bold;
+}
+
+
+
+
+/* quote styles */
+.quoteBubble {
+  background-color: #F0F0F0;
+   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-style: italic;
+  text-align: center;
+}
+
+.quoteBubble p {
+  margin: 0;
+}
+
+.quoteBubble .card-subtitle {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
