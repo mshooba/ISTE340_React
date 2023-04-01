@@ -34,12 +34,6 @@ nav.navbar {
   font-weight: bold;
 }
 
-/* card text styles*/
-
-.card-body {
- margin: 2rem 25rem 5rem 25rem;
-}
-
 .card-title.h5 {
   text-align: center;
   color: #212121;
@@ -71,8 +65,23 @@ nav.navbar {
 
 /* Degree Styles */
 .accordion {
-  border:none;
+  margin:  5rem;
 }
+
+/* Custom styles for Accordion */
+.custom-accordion .accordion-button:not(.collapsed) {
+  background-color: #212121;
+  color:  #fff;
+}
+
+.accordion-button:not(.collapsed)::after {
+  color: #fff;
+}
+.accordion-body {
+  background-color: #fff;
+}
+
+
 
 
 

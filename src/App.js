@@ -47,7 +47,7 @@ export class App extends React.Component {
 
         <div className = "title"> 
           <h1>Golisano College</h1>
-          <h2>Computing and Information Sciences</h2>
+          <h2>Of Computing and Information Sciences</h2>
         </div>
 
  
