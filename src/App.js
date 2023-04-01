@@ -2,6 +2,8 @@ import './App.css';
 import React from 'react';
 import Header from './components/Header.js';
 import Degrees from './components/Degrees.js'
+import Minors from './components/Minors.js'
+import People from './components/People';
 import getData from './util/getData.js';
 import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -64,6 +66,10 @@ export class App extends React.Component {
         </Card>
 
         <Degrees/>
+
+        <Minors/>
+
+        <People/>
 
         
 
