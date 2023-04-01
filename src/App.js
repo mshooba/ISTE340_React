@@ -1,10 +1,11 @@
 import './App.css';
 import React from 'react';
 import Header from './components/Header.js';
-import About from './components/About.js';
-import Degrees from './components/Degrees.js';
+import Degrees from './components/Degrees.js'
 import getData from './util/getData.js';
+import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ischool from './components/assets/ischool.jpg'
 
 
 
@@ -19,22 +20,19 @@ export class App extends React.Component {
   }
 
   componentDidMount() {
-    Promise.all([
-      getData('about/'),
-    ])
-    .then(([aboutJson, degreesJson]) => {
-      this.setState({
-        about: aboutJson,
-        aboutLoaded: true
+    //get data
+    getData('about/')
+      .then((json) => {
+        this.setState({
+          about: json,
+          aboutLoaded: true
+        })
       });
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-  }
+    }
+
 
   render() {
-    const { about, aboutLoaded } = this.state;
+    const {about, aboutLoaded } = this.state;
     if (!aboutLoaded) {
       return (
         <div className="App">
@@ -48,12 +46,29 @@ export class App extends React.Component {
         <Header />
 
         <div className = "title"> 
-          <h1>Golisano College of</h1>
+          <h1>Golisano College</h1>
           <h2>Computing and Information Sciences</h2>
         </div>
 
-        <About />
-        <Degrees />
+ 
+
+        <Card>
+          <Card.Body>
+            <Card.Title>{about.title}</Card.Title>
+            <Card.Text>{about.text}</Card.Text>
+              <div className='quoteBubble'>
+                <Card.Text>{about.quote}</Card.Text>
+                <Card.Subtitle>{about.quoteAuthor}</Card.Subtitle>
+              </div>
+          </Card.Body>
+        </Card>
+
+        <Degrees/>
+
+        
+
+
+      
         
         
       </div>
