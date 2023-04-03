@@ -35,7 +35,7 @@ export default class Degrees extends React.Component {
 
     return (
       <>
-        <Accordion className="custom-accordion" defaultActiveKey="0">
+        <Accordion className="custom-accordion" defaultActiveKey="0" flush>
           <Accordion.Item eventKey="minors">
             <h3>Minors</h3>
             {minors.map((minor, index) => (

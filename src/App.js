@@ -48,22 +48,21 @@ export class App extends React.Component {
         <Header />
 
         <div className = "title"> 
-          <h1>Golisano College</h1>
-          <h2>Of Computing and Information Sciences</h2>
+          <h1>School of Information</h1>
+          <h2>Golisano College of Computing and Information Sciences</h2>
         </div>
-
+        
+        <Card style={{ width: '50%' }}>
  
-
-        <Card>
           <Card.Body>
             <Card.Title>{about.title}</Card.Title>
             <Card.Text>{about.text}</Card.Text>
-              <div className='quoteBubble'>
+            <div className='quoteBubble'>
                 <Card.Text>{about.quote}</Card.Text>
                 <Card.Subtitle>{about.quoteAuthor}</Card.Subtitle>
               </div>
           </Card.Body>
-        </Card>
+      </Card>
 
         <Degrees/>
 
