@@ -6,7 +6,7 @@ class Employment extends Component {
       super(props);
       // Set the initial state
       this.state = {
-        employment: [],
+        employment: {},
         // Set the employmentLoaded flag to false
         employmentLoaded: false,
       };

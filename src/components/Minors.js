@@ -1,7 +1,7 @@
 import React from "react";
 import Accordion from "react-bootstrap/Accordion";
 import getData from "../util/getData";
-import { ListGroup } from "react-bootstrap";
+import { Button, ListGroup } from "react-bootstrap";
 
 export default class Degrees extends React.Component {
   constructor(props) {
@@ -46,7 +46,7 @@ export default class Degrees extends React.Component {
                   <ul>
                     <h5>Courses</h5>
                     {minor.courses.map((course, i) => (
-                      <ListGroup key={i}>{course}</ListGroup>
+                      <Button className="courseButton" key={i}>{course}</Button>
                     ))}
                   </ul>
                   {minor.note && <p>Note: {minor.note}</p>}
