@@ -3,11 +3,15 @@ import React from 'react';
 import Header from './components/Header.js';
 import Degrees from './components/Degrees.js'
 import Minors from './components/Minors.js'
-import Employment from './components/Employment';
 import People from './components/People';
 import getData from './util/getData.js';
 import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Employment from './components/Employment';
+import CoopTable from './components/CoopTable';
+import EmploymentTable from './components/EmploymentTable';
+
+
 
 export class App extends React.Component {
   constructor(props) {
@@ -55,10 +59,18 @@ export class App extends React.Component {
             </div>
           </Card.Body>
         </Card>
+
         <Degrees id="degrees-section" />
         <Minors id="minors-section" />
         <People id="people-section" />
-        <Employment id="employment-section" />
+        <Employment/>
+       
+        <CoopTable />
+        <EmploymentTable/>
+        
+        
+
+        
       </div>
     );
   }

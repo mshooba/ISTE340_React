@@ -48,7 +48,7 @@ export default class People extends React.Component {
 
                 <div className="peopleListItem">
                     <img src={person.imagePath} style={{maxWidth:"150px"}}/>
-                    <div>{person.name}</div>
+                    
              
                     <PeopleModal {...person}/>
                 </div>

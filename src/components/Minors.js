@@ -1,7 +1,8 @@
 import React from "react";
 import Accordion from "react-bootstrap/Accordion";
 import getData from "../util/getData";
-import { Button, ListGroup } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import CourseModal from "./CourseModal";
 
 export default class Degrees extends React.Component {
   constructor(props) {
@@ -21,17 +22,21 @@ export default class Degrees extends React.Component {
     });
   }
 
-  render() {
-    const { minors, minorsLoaded } = this.state;
+  handleOpenModal = (title, courseID, description) => {
+    this.setState({
+      showModal: true,
+      modalCourse: title, courseID, description
+    });
+  }
 
-    if (!minorsLoaded) {
-      return (
-        <div>
-          <h2>Minors</h2>
-          <p>Loading...</p>
-        </div>
-      );
-    }
+  handleCloseModal = () => {
+    this.setState({ showModal: false });
+  }
+
+  render() {
+    const { minors, minorsLoaded, showModal, modalCourse } = this.state;
+
+    // ...
 
     return (
       <>
@@ -46,7 +51,9 @@ export default class Degrees extends React.Component {
                   <ul>
                     <h5>Courses</h5>
                     {minor.courses.map((course, i) => (
-                      <Button className="courseButton" key={i}>{course}</Button>
+                      <Button key={i} onClick={() => this.handleOpenModal(course)}>
+                        {course}
+                      </Button>
                     ))}
                   </ul>
                   {minor.note && <p>Note: {minor.note}</p>}
@@ -55,6 +62,14 @@ export default class Degrees extends React.Component {
             ))}
           </Accordion.Item>
         </Accordion>
+
+        {showModal && (
+          <CourseModal
+          course={modalCourse}
+          handleCloseModal={this.handleCloseModal}
+          show={showModal}
+        />
+        )}
       </>
     );
   }
